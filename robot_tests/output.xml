@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.9.2 on linux)" generated="20220809 09:53:03.110" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.9.2 on linux)" generated="20220809 16:59:16.441" rpa="false" schemaversion="3">
 <suite id="s1" name="TC 001 Get Request Validate Content" source="/mnt/c/Users/clareain/testing/robotframework-api-example/robot_tests/TC_001_Get_Request_Validate_Content.robot">
 <test id="s1-t1" name="TC_001_Get_Request_Fetch_and_Validate_Content" line="10">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>Get_Student_Details</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220809 09:53:03.265" level="INFO">Creating Session using : alias=Get_Student_Details, url=https://thetestingworldapi.com/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220809 09:53:03.264" endtime="20220809 09:53:03.266"/>
+<msg timestamp="20220809 16:59:16.591" level="INFO">Creating Session using : alias=Get_Student_Details, url=https://thetestingworldapi.com/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220809 16:59:16.590" endtime="20220809 16:59:16.591"/>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <var>${response}</var>
@@ -15,29 +15,29 @@
 <arg>api/studentsDetails/3650450</arg>
 <doc>Send a GET request on the session object found using the
 given `alias`</doc>
-<msg timestamp="20220809 09:53:05.338" level="INFO">Get Request using : alias=Get_Student_Details, uri=api/studentsDetails/3650450, headers=None json=None</msg>
-<msg timestamp="20220809 09:53:05.338" level="INFO">/home/clare_davies/.local/lib/python3.9/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+<msg timestamp="20220809 16:59:18.664" level="INFO">Get Request using : alias=Get_Student_Details, uri=api/studentsDetails/3650450, headers=None json=None</msg>
+<msg timestamp="20220809 16:59:18.664" level="INFO">/home/clare_davies/.local/lib/python3.9/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20220809 09:53:05.339" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 09:53:03.266" endtime="20220809 09:53:05.339"/>
+<msg timestamp="20220809 16:59:18.665" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:59:16.591" endtime="20220809 16:59:18.665"/>
 </kw>
 <kw name="To Json" library="RequestsLibrary">
 <var>${json_response}</var>
 <arg>${response.content}</arg>
 <doc>Convert a string to a JSON object</doc>
-<msg timestamp="20220809 09:53:05.342" level="INFO">To JSON using : content={"status":"true","data":{"id":3650450,"first_name":"rupali","middle_name":"k","last_name":"garg","date_of_birth":"10/09/1984"}} </msg>
-<msg timestamp="20220809 09:53:05.342" level="INFO">To JSON using : pretty_print=False </msg>
-<msg timestamp="20220809 09:53:05.343" level="INFO">${json_response} = {'status': 'true', 'data': {'id': 3650450, 'first_name': 'rupali', 'middle_name': 'k', 'last_name': 'garg', 'date_of_birth': '10/09/1984'}}</msg>
-<status status="PASS" starttime="20220809 09:53:05.340" endtime="20220809 09:53:05.343"/>
+<msg timestamp="20220809 16:59:18.668" level="INFO">To JSON using : content={"status":"true","data":{"id":3650450,"first_name":"rupali","middle_name":"k","last_name":"garg","date_of_birth":"10/09/1984"}} </msg>
+<msg timestamp="20220809 16:59:18.669" level="INFO">To JSON using : pretty_print=False </msg>
+<msg timestamp="20220809 16:59:18.669" level="INFO">${json_response} = {'status': 'true', 'data': {'id': 3650450, 'first_name': 'rupali', 'middle_name': 'k', 'last_name': 'garg', 'date_of_birth': '10/09/1984'}}</msg>
+<status status="PASS" starttime="20220809 16:59:18.666" endtime="20220809 16:59:18.669"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220809 09:53:05.345" endtime="20220809 09:53:05.348"/>
+<status status="PASS" starttime="20220809 16:59:18.670" endtime="20220809 16:59:18.673"/>
 </kw>
-<status status="PASS" starttime="20220809 09:53:03.263" endtime="20220809 09:53:05.350"/>
+<status status="PASS" starttime="20220809 16:59:16.589" endtime="20220809 16:59:18.675"/>
 </test>
-<status status="PASS" starttime="20220809 09:53:03.113" endtime="20220809 09:53:05.355"/>
+<status status="PASS" starttime="20220809 16:59:16.445" endtime="20220809 16:59:18.682"/>
 </suite>
 <statistics>
 <total>
