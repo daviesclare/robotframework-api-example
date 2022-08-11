@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.2 on linux)" generated="20220810 10:48:44.904" rpa="false" schemaversion="3">
+<suite id="s1" name="Robot Tests" source="/mnt/c/Users/clareain/testing/robotframework-api-example/robot_tests">
+<suite id="s1-s1" name="TC 001 Get Request" source="/mnt/c/Users/clareain/testing/robotframework-api-example/robot_tests/TC_001_Get_Request.robot">
+<test id="s1-s1-t1" name="TC_001_Get_Request" line="8">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>Get_Student_Details</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220810 10:48:45.050" level="INFO">Creating Session using : alias=Get_Student_Details, url=https://thetestingworldapi.com/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220810 10:48:45.050" endtime="20220810 10:48:45.050"/>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>Get_Student_Details</arg>
+<arg>api/studentsDetails</arg>
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<msg timestamp="20220810 10:50:58.237" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x7efe043392b0&gt;: Failed to establish a new connection: [Errno 110] Connection timed out')': //api/studentsDetails</msg>
+<msg timestamp="20220810 10:53:11.559" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x7efe04339490&gt;: Failed to establish a new connection: [Errno 110] Connection timed out')': //api/studentsDetails</msg>
+<msg timestamp="20220810 10:55:24.891" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x7efe043395e0&gt;: Failed to establish a new connection: [Errno 110] Connection timed out')': //api/studentsDetails</msg>
+<msg timestamp="20220810 10:57:37.603" level="FAIL">ConnectionError: HTTPSConnectionPool(host='thetestingworldapi.com', port=443): Max retries exceeded with url: //api/studentsDetails (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x7efe04339730&gt;: Failed to establish a new connection: [Errno 110] Connection timed out'))</msg>
+<status status="FAIL" starttime="20220810 10:48:45.050" endtime="20220810 10:57:37.607"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220810 10:57:37.609" endtime="20220810 10:57:37.609"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220810 10:57:37.610" endtime="20220810 10:57:37.611"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${statusCode}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" starttime="20220810 10:57:37.611" endtime="20220810 10:57:37.612"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${statusCode}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20220810 10:57:37.612" endtime="20220810 10:57:37.612"/>
+</kw>
+<status status="FAIL" starttime="20220810 10:48:45.049" endtime="20220810 10:57:37.615">ConnectionError: HTTPSConnectionPool(host='thetestingworldapi.com', port=443): Max retries exceeded with url: //api/studentsDetails (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x7efe04339730&gt;: Failed to establish a new connection: [Errno 110] Connection timed out'))</status>
+</test>
+<status status="FAIL" starttime="20220810 10:48:44.943" endtime="20220810 10:57:37.617"/>
+</suite>
+<suite id="s1-s2" name="TC 001 Get Request Validate Content" source="/mnt/c/Users/clareain/testing/robotframework-api-example/robot_tests/TC_001_Get_Request_Validate_Content.robot">
+<test id="s1-s2-t1" name="TC_001_Get_Request_Fetch_and_Validate_Content" line="10">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>Get_Student_Details</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220810 10:57:37.684" level="INFO">Creating Session using : alias=Get_Student_Details, url=https://thetestingworldapi.com/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220810 10:57:37.683" endtime="20220810 10:57:37.684"/>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>Get_Student_Details</arg>
+<arg>api/studentsDetails/3650450</arg>
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<msg timestamp="20220810 10:59:50.732" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x7efe04177d60&gt;: Failed to establish a new connection: [Errno 110] Connection timed out')': //api/studentsDetails/3650450</msg>
+<msg timestamp="20220810 11:02:04.052" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x7efe04177e80&gt;: Failed to establish a new connection: [Errno 110] Connection timed out')': //api/studentsDetails/3650450</msg>
+<msg timestamp="20220810 11:04:17.364" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x7efe04182040&gt;: Failed to establish a new connection: [Errno 110] Connection timed out')': //api/studentsDetails/3650450</msg>
+<msg timestamp="20220810 11:06:30.085" level="FAIL">ConnectionError: HTTPSConnectionPool(host='thetestingworldapi.com', port=443): Max retries exceeded with url: //api/studentsDetails/3650450 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x7efe04177340&gt;: Failed to establish a new connection: [Errno 110] Connection timed out'))</msg>
+<status status="FAIL" starttime="20220810 10:57:37.685" endtime="20220810 11:06:30.085"/>
+</kw>
+<kw name="To Json" library="RequestsLibrary">
+<var>${json_response}</var>
+<arg>${response.content}</arg>
+<doc>Convert a string to a JSON object</doc>
+<status status="NOT RUN" starttime="20220810 11:06:30.086" endtime="20220810 11:06:30.086"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220810 11:06:30.086" endtime="20220810 11:06:30.086"/>
+</kw>
+<status status="FAIL" starttime="20220810 10:57:37.682" endtime="20220810 11:06:30.087">ConnectionError: HTTPSConnectionPool(host='thetestingworldapi.com', port=443): Max retries exceeded with url: //api/studentsDetails/3650450 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x7efe04177340&gt;: Failed to establish a new connection: [Errno 110] Connection timed out'))</status>
+</test>
+<status status="FAIL" starttime="20220810 10:57:37.621" endtime="20220810 11:06:30.088"/>
+</suite>
+<status status="FAIL" starttime="20220810 10:48:44.909" endtime="20220810 11:06:30.089"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="Robot Tests">Robot Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="TC 001 Get Request">Robot Tests.TC 001 Get Request</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s2" name="TC 001 Get Request Validate Content">Robot Tests.TC 001 Get Request Validate Content</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220810 10:50:58.237" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x7efe043392b0&gt;: Failed to establish a new connection: [Errno 110] Connection timed out')': //api/studentsDetails</msg>
+<msg timestamp="20220810 10:53:11.559" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x7efe04339490&gt;: Failed to establish a new connection: [Errno 110] Connection timed out')': //api/studentsDetails</msg>
+<msg timestamp="20220810 10:55:24.891" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x7efe043395e0&gt;: Failed to establish a new connection: [Errno 110] Connection timed out')': //api/studentsDetails</msg>
+<msg timestamp="20220810 10:59:50.732" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x7efe04177d60&gt;: Failed to establish a new connection: [Errno 110] Connection timed out')': //api/studentsDetails/3650450</msg>
+<msg timestamp="20220810 11:02:04.052" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x7efe04177e80&gt;: Failed to establish a new connection: [Errno 110] Connection timed out')': //api/studentsDetails/3650450</msg>
+<msg timestamp="20220810 11:04:17.364" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x7efe04182040&gt;: Failed to establish a new connection: [Errno 110] Connection timed out')': //api/studentsDetails/3650450</msg>
+</errors>
+</robot>
