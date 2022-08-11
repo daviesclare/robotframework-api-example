@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
     - name: Execute tests
       uses: joonvena/robotframework-docker-action@v1.0
     - name: Upload test results
@@ -24,19 +28,7 @@ jobs:
     if: always()
     needs: [test] 
     runs-on: ubuntu-latest
-    strategy:
-      # You can use PyPy versions in python-version.
-      matrix:
-        python-version: ["3.8", "3.9", "3.10"]
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4
-      with:
-        python-version: ${{ matrix.python-version }}
-    # You can test your matrix by printing the current Python version
-    - name: Display Python version
-      run: python -c "import sys; print(sys.version)"
     - uses: actions/checkout@v2
     - name: Download reports
       uses: actions/download-artifact@v1
