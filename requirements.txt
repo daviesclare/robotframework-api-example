@@ -1,8 +1,7 @@
-invoke >= 0.20
-rellu >= 0.6
-docutils >= 0.14
-robotframework >= 3.2
-robotframework-seleniumlibrary >= 3.3.1
+invoke == 0.20
+rellu == 0.6
+docutils == 0.14
+robotframework == 4.0
 jsonpath-rw==1.4.0
 jsonpath-rw-ext==1.2.2
 requests==2.22.0

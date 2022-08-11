@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.9.2 on linux)" generated="20220811 13:08:59.407" rpa="false" schemaversion="3">
+<robot generator="Robot 4.0 (Python 3.9.2 on linux)" generated="20220811 15:54:58.393" rpa="false" schemaversion="2">
 <suite id="s1" name="TC endpoint" source="/mnt/c/Users/clareain/testing/robotframework-api-example/robot_tests/TC_endpoint.robot">
-<test id="s1-t1" name="Getting Started" line="7">
+<test id="s1-t1" name="Getting Started">
 <kw name="Get Valid Url" library="OpenApiLibCore">
 <var>${url}</var>
 <arg>endpoint=/clinicians</arg>
 <arg>method=get</arg>
 <doc>This keyword returns a valid url for the given `endpoint` and `method`.</doc>
-<msg timestamp="20220811 13:09:01.543" level="INFO">${url} = http://localhost:3000/clinicians</msg>
-<status status="PASS" starttime="20220811 13:09:00.907" endtime="20220811 13:09:01.543"/>
+<msg timestamp="20220811 15:55:00.540" level="INFO">${url} = http://localhost:3000/clinicians</msg>
+<status status="PASS" starttime="20220811 15:54:59.883" endtime="20220811 15:55:00.540"/>
 </kw>
-<status status="PASS" starttime="20220811 13:09:00.906" endtime="20220811 13:09:01.543"/>
+<status status="PASS" starttime="20220811 15:54:59.883" endtime="20220811 15:55:00.540"/>
 </test>
-<status status="PASS" starttime="20220811 13:08:59.414" endtime="20220811 13:09:01.544"/>
+<status status="PASS" starttime="20220811 15:54:58.396" endtime="20220811 15:55:00.541"/>
 </suite>
 <statistics>
 <total>
